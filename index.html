@@ -44,12 +44,27 @@
 <body>
     <div id="mazeContainer"></div>
     <script>
-        const gridWidth = 16;
-        const gridHeight = 9;
-        const start = {x: 1, y: 1};
-        const end = {x: gridWidth - 2, y: gridHeight - 2};
-        let player = {...start};
-        let maze = [];
+        let gridWidth;
+        let gridHeight;
+        let start;
+        let end;
+        let player;
+        let maze;
+
+        function promptGridSize() {
+            gridWidth = parseInt(prompt("Enter the width of the grid (e.g., 16):", "16"));
+            gridHeight = parseInt(prompt("Enter the height of the grid (e.g., 9):", "9"));
+            if (isNaN(gridWidth) || isNaN(gridHeight) || gridWidth < 3 || gridHeight < 3) {
+                alert("Invalid grid size. Please enter valid numbers greater than 2.");
+                promptGridSize();
+            } else {
+                start = {x: 1, y: 1};
+                end = {x: gridWidth - 2, y: gridHeight - 2};
+                player = {...start};
+                maze = generateMaze(gridWidth, gridHeight);
+                createMaze();
+            }
+        }
 
         function generateMaze(width, height) {
             const maze = Array.from({ length: height }, () => Array(width).fill(1));
@@ -152,8 +167,7 @@
             }
         });
 
-        maze = generateMaze(gridWidth, gridHeight);
-        createMaze();
+        promptGridSize();
     </script>
 </body>
 </html>
