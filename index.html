@@ -50,6 +50,8 @@
         let end;
         let player;
         let maze;
+        let timer;
+        let startTime;
 
         function promptGridSize() {
             gridWidth = parseInt(prompt("Enter the width of the grid (e.g., 16):", "16"));
@@ -132,12 +134,17 @@
             const newX = player.x + x;
             const newY = player.y + y;
             if (maze[newY][newX] !== 1) {
+                if (!startTime) {
+                    startTime = new Date();
+                }
                 player.x = newX;
                 player.y = newY;
                 createMaze();
                 if (player.x === end.x && player.y === end.y) {
+                    const endTime = new Date();
+                    const timeTaken = ((endTime - startTime) / 1000).toFixed(2);
                     setTimeout(() => {
-                        alert('You win!');
+                        alert(`You win! Time taken: ${timeTaken} seconds`);
                         resetGame();
                     }, 10);
                 }
@@ -147,6 +154,7 @@
         function resetGame() {
             player = {...start};
             maze = generateMaze(gridWidth, gridHeight);
+            startTime = null;
             createMaze();
         }
 
