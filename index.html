@@ -3,15 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rhythm's Home Page</title>
+    <link rel="icon" type="image/x-icon" href="LOGO.jpeg">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+        body {
+            font-family: "Orbitron", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 900;
+            font-style: normal;
+        }
+
+        td {
+            border: 1px solid black;
+            width: 33vw;
+            height: 40vh;
+            text-align: center;
+        }
+
+        .button {
+            display: inline-block;
+            border-radius: 4px;
+            background-color: #000000;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 28px;
+            padding: 20px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .dis {
+            opacity: 0.6;
+            cursor: not-allowed;
+            margin: 5px;
+            display: inline-block;
+            border-radius: 4px;
+            background-color: #000000;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 28px;
+            padding: 20px;
+            width: 200px;
+            transition: all 0.5s;
+        }
+
+        .button:hover {
+            background-color: #000000;
+            color: white;
+        }
+
+        .button:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .button:hover span {
+            padding-right: 25px;
+        }
+
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+    </style>
+    <script>
+        function link(n) {
+            const links = [
+                'https://ms7ru.github.io/maze',
+                'https://ms7ru.github.io/t',
+                'https://ms7ru.github.io/p',
+                'https://ms7ru.github.io/pptx'
+            ];
+            window.location.href = links[n-1]
+        }
+    </script>
 </head>
 <body>
-    <center>
-        <h1><Button onclick="window.location.href = 'https://ms7ru.github.io/maze'">Maze</Button></h1>
-        <h1><Button onclick="window.location.href = 'https://ms7ru.github.io/t'">Not A Troll</Button></h1>
-        <h1><Button onclick="window.location.href = 'https://ms7ru.github.io/p'">Roblox tools</Button></h1>
-        <h1><Button onclick="window.location.href = 'https://ms7ru.github.io/pptx'">Pttx i made on countries</Button></h1>
-        <h1><Button onclick="window.location.href = 'https://ms7ru.github.io/w'">PPTX for group 3</Button></h1>
-    </center>
+    <table>
+        <tr>
+            <td>
+                <h3>The Box roaming Another Box!!! <br> The Ultimate Maze Game!!!</h1>
+                <p>Code: Rhythm <br> Designing: Vihan</p>
+                <button class="button" onclick="link(1)"><span>VISIT</span></button>
+            </td>
+            <td>
+                <h3>Not A RickRoll! This is'nt a Troll!<br>A website that won't RickRoll you.</h1>
+                <p>Code: Rhythm <br> Designing: Rhythm</p>
+                <button class="button" onclick="link(2)"><span>VISIT</span></button>
+            </td>
+            <td>
+                <h3>The tools for the making of ASN!<br>Tools i use in roblox stuio. with vihan.</h1>
+                <p>Code: Rhythm <br> Designing: Nobody!!</p>
+                <button class="button" onclick="link(3)"><span>VISIT</span></button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h3>All 7 PPTX i made for 50th year of ASN<br>(Asked by Mam)</h1>
+                <p>Code: None!! <br> Designing: Rhythm</p>
+                <button class="button" onclick="link(4)"><span>VISIT</span></button>
+            </td>
+            <td>
+                <h3>To Be made<br>(To make)</h1>
+                <p>Code: ??? <br> Designing: ???</p>
+                <button class="dis" onclick=""><span>VISIT</span></button>
+            </td>
+            <td>
+                <h3>To Be made<br>(To make)</h1>
+                <p>Code: ??? <br> Designing: ???</p>
+                <button class="dis" onclick=""><span>VISIT</span></button>
+            </td>
+        </tr>
+    </table>
+    <h1 style="text-align: center;">
+        A WEBSITE BY RHYTHM UPADHYAY OF 6th A
+    </h1>
+
+    
 </body>
 </html>
