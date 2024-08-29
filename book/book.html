@@ -5,50 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Class Six Book Selector</title>
   <link rel="icon" type="image/png" href="ICON.jpeg">
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-      overflow: hidden
-    }
-
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px;
-      background-color: #f0f0f0;
-      overflow: hidden
-    }
-
-    .select-container {
-      display: flex;
-      align-items: center;
-      margin-right: 10px;
-    }
-
-    select {
-      padding: 10px 20px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    #pdf-container {
-      flex: 1;
-      overflow: auto;
-      height: calc(100vh - 50px); /* Adjust according to the height of the header */
-      overflow: hidden
-    }
-
-    .creator-text {
-      color: black;
-      text-align: right;
-    }
-  </style>
+  <link rel = "stylesheet" type="text/css" href = "style.css" />
 </head>
 <body>
   <div class="header" width="100%" height="3%">
@@ -75,50 +32,6 @@
       <iframe id="pdfViewer" src="" width="100%" height="100%"></iframe>
     </div>
   </div>
-  <script>
-    const chaptersPerSubject = {
-      "A-pact-with-the-sun": 7,
-      "Civics": 8,
-      "Geography": 6,
-      "History": 10,
-      "Math": 12,
-      "Ruchika": 13,
-      "Science": 11,
-      "Vasnt": 15
-    };
-
-    function populateChapters() {
-      const subjectDropdown = document.getElementById("subjectDropdown");
-      const chapterDropdown = document.getElementById("chapterDropdown");
-      const selectedSubject = subjectDropdown.value;
-
-      chapterDropdown.innerHTML = '<option value="">Select Chapter</option>';
-      
-      if (selectedSubject) {
-        const numChapters = chaptersPerSubject[selectedSubject];
-        for (let i = 1; i <= numChapters; i++) {
-          const option = document.createElement("option");
-          option.value = i;
-          option.textContent = `Chapter ${i}`;
-          chapterDropdown.appendChild(option);
-        }
-      }
-    }
-
-    function displayPdf() {
-      const subjectDropdown = document.getElementById("subjectDropdown");
-      const chapterDropdown = document.getElementById("chapterDropdown");
-      const selectedSubject = subjectDropdown.value;
-      const selectedChapter = chapterDropdown.value;
-
-      if (selectedSubject && selectedChapter) {
-        const pdfViewer = document.getElementById("pdfViewer");
-        const pdfPath = `./${selectedSubject}/${selectedChapter}.pdf`;
-        pdfViewer.src = pdfPath;
-      }
-    }
-
-    document.getElementById("chapterDropdown").addEventListener("change", displayPdf);
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
